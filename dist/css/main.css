@@ -1,0 +1,19 @@
+body {
+  font-family: "Microsoft Yahei", Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 200;
+  color: #fff;
+  background-image: -webkit-radial-gradient(farthest-side circle at 20% 20%, #1a223f, #13141a);
+  background-image: radial-gradient(farthest-side circle at 20% 20%, #1a223f, #13141a);
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  height: 100%; }
+
+.lang {
+  position: absolute;
+  right: 20px;
+  top: 20px; }
+  .lang span {
+    padding: 10px; }

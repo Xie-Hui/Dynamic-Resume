@@ -1,0 +1,31 @@
+$fontStack:    "Microsoft Yahei", Helvetica, sans-serif;
+$primaryColor: #fff;
+$fontDefault: 22px;
+$fontWeightDefault: 200;
+
+body {
+  font-family: $fontStack;
+  font-size: $fontDefault;
+  font-weight: $fontWeightDefault;
+  color: $primaryColor;
+  background-image: -webkit-radial-gradient( farthest-side circle at 20% 20%, rgb(26, 34, 63),rgb(19, 20, 26));
+  background-image: radial-gradient( farthest-side circle at 20% 20%, rgb(26, 34, 63),rgb(19, 20, 26));
+  margin:0;
+  padding:0;
+}
+
+html, body {
+	height: 100%;
+}
+
+
+.lang{
+	position: absolute;
+	right:20px;
+	top:20px;
+
+	span{
+		padding:10px;
+	}
+}
+

@@ -1,0 +1,17 @@
+{
+  "name": "resume_page",
+  "version": "1.0.0",
+  "description": "Ma Yidong's resume",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "resume"
+  ],
+  "author": "Ma Yidong",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
