@@ -12,6 +12,7 @@ var prvTarget;
 var sceneWebgl, rendererWebgl;
 
 window.onload = function(){
+	bindLangSwitcher();
     setup();
     animate();
 }
@@ -259,8 +260,37 @@ function mousewheel( event ) {
     }
 function cameraWander(){
     var myDate=new Date() / 2000;
-    var rad = 5;
+    var rad = 1;
     camera.position.x += Math.sin(myDate) * rad;
     camera.position.y += Math.cos(myDate) * rad / 5;
     camera.lookAt(prvTarget);
+}
+
+function bindLangSwitcher(){
+
+	var langcn = document.getElementById("cn");
+	var langen = document.getElementById("en");
+	langcn.addEventListener("click", function(){
+		if (currentLang === 0)
+			return;
+		else{
+			currentLang = 0;
+			document.getElementById( 'container' ).innerHTML = '';
+			document.getElementById( 'title' ).innerHTML = '马逸东简历';
+			setup();
+    		animate();
+		}
+
+	});
+	langen.addEventListener("click", function(){
+		if (currentLang === 1)
+			return;
+		else{
+			currentLang = 1;
+			document.getElementById( 'container' ).innerHTML = '';
+			document.getElementById( 'title' ).innerHTML = 'Resume of Ma Yidong';
+			setup();
+    		animate();
+		}
+	});
 }
