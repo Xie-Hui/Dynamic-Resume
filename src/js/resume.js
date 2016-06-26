@@ -1,7 +1,7 @@
 var cv_cn = {
     "logo":"",
     "name":"马逸东",
-    "title":"技术美术工程师 | 运算化设计师",
+    "title":"运算化设计师",
     "intro":"曾学习建筑学，擅长参数化设计与数字建造。善于学习，喜欢编程。",
     
     "educationBackground":{
@@ -224,7 +224,7 @@ var cv_cn = {
 var cv_en = {
     "logo":"",
     "name":"Ma Yidong",
-    "title":"Tech Artist | Computational Designer",
+    "title":"Computational Designer",
     "intro":"Study architure before, specialize in computational design and fabrication. Eager to learn, like programming.",
     
     "educationBackground":{
