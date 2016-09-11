@@ -144,18 +144,25 @@ var cv_cn = {
     "workExperience":{
         "title":"工作经历",
 
+        "netease":{
+            "time":"2016.7-2016.9",
+            "position":"技术美术工程师实习",
+            "company":"网易雷火游戏部",
+            "role":"过程式建模制作沙盘场景，设计并推广地形建模流程，研究过程式生成中国古建。"
+        },
+
         "xwg":{
             "time":"2015.9-",
             "position":"助理建筑师",
             "company":"XWG工作室",
-            "role":"主要负责参数化建模与渲染"
+            "role":"参数化建模与渲染"
         },
 
         "shanghai":{
             "time":"2015.5-2015.8",
             "position":"建筑实习生",
             "company":"上海市建筑设计研究院",
-            "role":"主要负责参数化建模与渲染"
+            "role":"参数化建模与渲染"
         },
 
         "freelancer":{
@@ -169,53 +176,46 @@ var cv_cn = {
     "skills":{
         "title":"技能",
 
-        "html":{
-            "name":"HTML/CSS",
-            "proficency":"熟练",
-            "intro":"能够编写语义化HTML，了解HTML5和CSS3新特性。"
+        "modelling":{
+            "name":"三维建模",
+            "proficency":"精通",
+            "intro":"Rhinoceros四年使用经验, 熟练掌握Maya与3dsMax。"
         },
 
-        "javascript":{
-            "name":"Javascript",
+        "unity":{
+            "name":"游戏引擎",
             "proficency":"熟练",
-            "intro":"熟悉JQuery，会用Gulp构建项目。"
+            "intro":"会编写Unity游戏脚本与Shader，了解基本资源优化方法"
         },
 
-        "visulize":{
-            "name":"可视化工具",
-            "proficency":"熟悉",
-            "intro":"会使用Three.js，熟练掌握Processing与Grasshopper"
+        "pcg":{
+            "name":"过程式建模",
+            "proficency":"熟练",
+            "intro":"熟练掌握WorldMachine, SpeedTree和CityEngine"
+        },
+
+        "frontend":{
+            "name":"前端工具",
+            "proficency":"熟练",
+            "intro":"能够编写语义化HTML，熟悉CSS3新特性，熟悉原生JS与JQuery，会使用Three.js"
         },
 
         "design":{
-            "name":"平面图像处理",
+            "name":"平面处理",
             "proficency":"精通",
             "intro":"多年使用Photoshop、Illustrator和Indesign经验"
         },
 
-        "python":{
-            "name":"Python",
-            "proficency":"熟悉",
-            "intro":"对爬虫和数据处理有一定经验"
-        },
-
-
-        "csharp":{
-            "name":"C#",
+        "prototype":{
+            "name":"硬件原型",
             "proficency":"熟练",
-            "intro":"掌握C#Rhino二次开发，了解WPF"
+            "intro":"熟悉Arduino硬件交互，了解电路基本知识，会制作3D打印机械零件原型"
         },
 
-        "rhino":{
-            "name":"Rhino",
-            "proficency":"精通",
-            "intro":"四年使用经验，一年教学经验"
-        },
-
-        "max":{
-            "name":"3DSMax",
+        "coding":{
+            "name":"程序编码",
             "proficency":"熟练",
-            "intro":"对多边形建模、贴图渲染、动作绑定均有一定研究"
+            "intro":"掌握C#Rhino二次开发，熟悉Unity脚本，对Python爬虫和数据处理有一定经验，了解MEL、HLSL和GLSL"
         }
     }
 
@@ -367,25 +367,19 @@ var cv_en = {
     "workExperience":{
         "title":"Experience",
 
+
+        "netease":{
+            "time":"2016.7-2016.9",
+            "position":"Technical Artist Intern",
+            "company":"NetEase Game",
+            "role":"Procedural modelling of sandtable scene, make procedureal terrain generation pipeline for artist, experiment on procedural generation of traditional chinese architecture."
+        },
+
         "xwg":{
             "time":"2015.9-",
             "position":"Assistant Architect",
             "company":"XWG Archi-studio",
             "role":"Parametric modelling and rendering"
-        },
-
-        "skj":{
-            "time":"2014.9-2015.9",
-            "position":"Editor",
-            "company":"Sankaijian Architecture Report",
-            "role":"write and translate architectural reports, several articles reveice 10000+ reading on Wechat."
-        },
-
-        "skj":{
-            "time":"2014.10-2015.4",
-            "position":"Assistant Designer",
-            "company":"Exhibiton Design Group, Milan Expo China Pavilion",
-            "role":"modelling one of project"
         },
 
         "shanghai":{
@@ -406,22 +400,28 @@ var cv_en = {
     "skills":{
         "title":"Skills",
 
-        "html":{
-            "name":"HTML/CSS",
-            "proficency":"Proficient",
-            "intro":"can write semantic HTML，know new features in HTML5 and CSS3"
+        "modelling":{
+            "name":"3D Modelling",
+            "proficency":"Expert",
+            "intro":"4 year experience using Rhinoceros, Confident with Maya and 3dsMax。"
         },
 
-        "javascript":{
-            "name":"Javascript",
-            "proficency":"Proficient",
-            "intro":"Proficient with JQuery，know how to use Gulp"
+        "unity":{
+            "name":"Game Engine",
+            "proficency":"Proficent",
+            "intro":"Write Unity scripts and Shader，familier with asset optimization methods"
         },
 
-        "visulize":{
-            "name":"Visualizing",
+        "pcg":{
+            "name":"Procedural Generating Contents",
+            "proficency":"Expert",
+            "intro":"Expert with WorldMachine, SpeedTree and CityEngine"
+        },
+
+        "frontend":{
+            "name":"Front End Tools",
             "proficency":"Familier",
-            "intro":"know some Three.js，proficient in Processing与Grasshopper"
+            "intro":"can write semantic HTML，know new features in CSS3，proficient with JQuery，know some Three.js"
         },
 
         "design":{
@@ -430,29 +430,16 @@ var cv_en = {
             "intro":"many year's experience in Photoshop、Illustrator and Indesign"
         },
 
-        "python":{
-            "name":"Python",
-            "proficency":"Familier",
-            "intro":"have experience in data analysis and making crawler"
+        "prototype":{
+            "name":"Prototype",
+            "proficency":"Proficent",
+            "intro":"Proficient with Arduino interation，have basic electronic circuit knowledge，able to create 3dprint machine parts"
         },
 
-
-        "csharp":{
-            "name":"C#",
-            "proficency":"Proficient",
-            "intro":"delelop C# Rhino plugin，know about WPF"
-        },
-
-        "rhino":{
-            "name":"Rhino",
-            "proficency":"Expert",
-            "intro":"four years' using experience, one year's teaching experience"
-        },
-
-        "max":{
-            "name":"3DSMax",
-            "proficency":"Proficient",
-            "intro":"have good understanding of polygonal modelling, mapping and rendering, rigging."
+        "coding":{
+            "name":"Coding",
+            "proficency":"Proficent",
+            "intro":"Good at develop C# plugin for Rhinoceros，Familier with Unity3D script，have experience in data analysis and web crawler，know about MEL, HLSL and GLSL"
         }
     }
 
