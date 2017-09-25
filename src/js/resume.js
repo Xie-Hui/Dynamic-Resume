@@ -1,232 +1,9 @@
-var cv_cn = {
+var cv = {
     "logo":"",
-    "name":"马逸东",
-    "title":"运算化设计师",
-    "intro":"曾学习建筑学，擅长参数化设计与数字建造。善于学习，喜欢编程。",
-    
-    "educationBackground":{
-        "title":"教育背景",
-
-        "graduate":{
-            "time":"2015.9-2017.7",
-            "school":"清华大学建筑学院",
-            "degree":"建筑学硕士",
-            "gpa":"GPA 3.58/4",
-            "courses":"参加课程: 大数据分析、人机交互"
-        },
-        "minor":{
-            "time":"2012.9-2015.7",
-            "school":"清华大学计算机系",
-            "degree":"计算机技术辅修",
-            "gpa":"GPA 92/100",
-            "courses":"参加课程: 软件工程、计算机辅助设计、数据结构、C++程序设计、计算机系统与组成结构"
-        },
-        "undergraduate":{
-            "time":"2011.9-2015.7",
-            "school":"清华大学建筑学院",
-            "degree":"建筑学学士",
-            "gpa":"GPA 90/100",
-            "courses":"参加课程: 素描水彩、微积分、建筑设计。担任班级生活与学习委员。获得过国家奖学金。"
-        }
-    },
-
-    "projects":{
-        "title":"项目经验",
-
-        "issuu_monitor":{
-            "name":"Issuu Crawler",
-            //"link":"",
-            "brief":"Issuu爬虫，寻找最赞作品集",
-            "intro":"用urllib+re实现Issuu.com爬虫，寻找最赞作品集并排序以及下载",
-            "skill":["Python"],
-            "github":"https://github.com/maajor/IssuuPortfolioCrawler",
-            "zhihu":"https://www.zhihu.com/question/38438713/answer/85073618?from=profile_answer_card"
-        },
-
-        "vp3dp":{
-            "name":"Fused Synergy",
-            //"link":"",
-            "brief":"多材质机械臂空间FDM打印",
-            "intro":"将多种材料混合挤出，用机械臂控制实现空间自由打印",
-            "skill":["Arduino", "Kuka Robot"],
-            "behance":"https://www.behance.net/gallery/33713362/VP3DP-Robot",
-        },
-
-        "physarealm":{
-            "name":"Physarealm",
-           // "link":"",
-            "brief":"黏菌仿生找形",
-            "intro":"模仿黏菌觅食过程，实现Agent-Based Modelling找形，并发展为建筑形态",
-            "skill":["C#", "Grasshopper", "Photoshop", "Rhino"],
-            "github":"https://github.com/maajor/Physarealm",
-            "behance":"https://www.behance.net/gallery/33713844/Physarealm",
-            "food4rhino":"http://www.food4rhino.com/project/physarealm?ufh"
-        },
-
-        "elders_ambition":{
-            "name":"长者之野望",
-           // "link":"",
-            "brief":"拯救软件工程世界的魔塔RPG游戏",
-            "intro":"2014年软件工程课年度最佳作品，主要负责UI/UX设计",
-            "skill":["Photoshop" , "Qt", "C++"],
-            "github":"https://github.com/a-serious/elders-ambition",
-            "se2014":"http://soft.cs.tsinghua.edu.cn/blog/?q=se2014"
-        },
-
-        "ife":{
-            "name":"百度前端学院",
-           // "link":"",
-            "brief":"参加百度IFE学习前端技术",
-            "intro":"最终项目完成原生JS的图片展示库",
-            "skill":["HTML" , "CSS", "Javascript"],
-            "github":"https://github.com/xuteam"
-        },
-
-        "fingerprint":{
-            "name":"Fingerprint on Painting",
-           // "link":"",
-            "brief":"HCI课程项目",
-            "intro":"精调深度卷积神经网络，识别画作风格与作者",
-            "skill":["Python" , "Caffe"],
-            "github":"https://github.com/THU-HCI2016-MLGroup/FingerprintOnPaintings"
-        }
-
-    },
-
-
-    "awards":{
-        "title":"获奖",
-
-        "excellent":{
-            "time":2016,
-            "name":"2016年清华大学优良毕业生",
-            "institution":"清华大学",
-            "intro":"授予10%毕业生"
-        },
-
-        "dada":{
-            "time":2015,
-            "name":"DADA2015最佳学生论文奖",
-            "institution":"中国建筑学会数字建筑专委会颁发",
-            "intro":"数字建筑专委会国际会议论文。题目：不规则剪式铰的参数化设计与建造，唯一本科获奖者。"
-        },
-
-        "evolo":{
-            "time":2014,
-            "name":"Evolo摩天楼竞赛 荣誉提名",
-            "institution":"evolo杂志社颁发",
-            "intro":"国际建筑概念设计竞赛获奖，提名奖总共20/600+。主要负责建模与效果图制作。"
-        },
-
-        "national_award":{
-            "time":2012,
-            "name":"国家奖学金",
-            "institution":"中国教育部颁发",
-            "intro":"大一学期成绩优秀获奖"
-        },
-
-        "software_award":{
-            "time":2014,
-            "name":"软件工程课年度最佳项目",
-            "institution":"软件工程全校通选课颁发",
-            "intro":"项目\"长者之野望\"，主要负责UI/UX设计"
-        },
-
-        "innovation_award":{
-            "time":2014,
-            "name":"科技创新奖学金",
-            "institution":"清华大学颁发",
-            "intro":"大三学期参加科创活动成果较多，获得奖励"
-        },
-
-    },
-
-    "workExperience":{
-        "title":"工作经历",
-
-        "netease":{
-            "time":"2016.7-2016.9",
-            "position":"技术美术工程师实习",
-            "company":"网易雷火游戏部",
-            "role":"过程式建模制作沙盘场景，设计并推广地形建模流程，研究过程式生成中国古建。"
-        },
-
-        "xwg":{
-            "time":"2015.9-",
-            "position":"助理建筑师",
-            "company":"XWG工作室",
-            "role":"参数化建模与渲染"
-        },
-
-        "shanghai":{
-            "time":"2015.5-2015.8",
-            "position":"建筑实习生",
-            "company":"上海市建筑设计研究院",
-            "role":"参数化建模与渲染"
-        },
-
-        "freelancer":{
-            "time":"2014.9-",
-            "position":"",
-            "company":"自由职业者(兼职)",
-            "role":"从事程序开发、建模、渲染、建筑设计等工作"
-        }
-    },
-
-    "skills":{
-        "title":"技能",
-
-        "modelling":{
-            "name":"三维建模",
-            "proficency":"精通",
-            "intro":"Rhinoceros四年使用经验, 熟练掌握Maya与3dsMax。"
-        },
-
-        "unity":{
-            "name":"游戏引擎",
-            "proficency":"熟练",
-            "intro":"会编写Unity游戏脚本与Shader，了解基本资源优化方法"
-        },
-
-        "pcg":{
-            "name":"过程式建模",
-            "proficency":"熟练",
-            "intro":"熟练掌握WorldMachine, SpeedTree和CityEngine"
-        },
-
-        "frontend":{
-            "name":"前端工具",
-            "proficency":"熟练",
-            "intro":"能够编写语义化HTML，熟悉CSS3新特性，熟悉原生JS与JQuery，会使用Three.js"
-        },
-
-        "design":{
-            "name":"平面处理",
-            "proficency":"精通",
-            "intro":"多年使用Photoshop、Illustrator和Indesign经验"
-        },
-
-        "prototype":{
-            "name":"硬件原型",
-            "proficency":"熟练",
-            "intro":"熟悉Arduino硬件交互，了解电路基本知识，会制作3D打印机械零件原型"
-        },
-
-        "coding":{
-            "name":"程序编码",
-            "proficency":"熟练",
-            "intro":"掌握C#Rhino二次开发，熟悉Unity脚本，对Python爬虫和数据处理有一定经验，了解MEL、HLSL和GLSL"
-        }
-    }
-
-}
-
-var cv_en = {
-    "logo":"",
-    "name":"Ma Yidong",
+    "name":"Hui Xie",
     "title":"Computational Designer",
     "intro":"Study architure before, specialize in computational design and fabrication. Eager to learn, like programming.",
-    
+
     "educationBackground":{
         "title":"Background",
 
@@ -479,18 +256,14 @@ function createCvElements(){
     namecardNode.className = "namecard"+"-container";
     //container.appendChild(namecardNode);
 
-    var lang = "en";
-    var currentcv = currentLang === 0 ? cv_cn : cv_en;
-    var cvKeys = Object.keys(currentcv);
+    var cvKeys = Object.keys(cv);
     //console.log(cvKeys.length);
-    var return_but =  currentLang === 0 ? "返回" : "Return";
-
-
+    var return_but = "Return";
 
     for(var i = 0; i < cvKeys.length; i++){
         var cvitem_name = cvKeys[i];
-        var SectionObject = currentcv[cvitem_name];
-        if(SectionObject instanceof Object){
+        var SectionObject = cv[cvitem_name];
+        if(SectionObject instanceof Object){ //if sectionObject is a valid object e.g. has multiple entries contents
 
             var thisKeys = Object.keys(SectionObject);//name, prohect1, project2.....
 
@@ -517,7 +290,7 @@ function createCvElements(){
             container.appendChild(thisSectionNavNode);
 
 
-            //nav-block
+            //navigation-block
             var len = cvKeys.length;
             var r = 180 + Math.random() * 50;
             var theta = Math.random() * (6/len) + i * (12/len);
@@ -544,10 +317,10 @@ function createCvElements(){
             var faceZ = thisSectionZ + 1500 ;
             var faceTarget= new THREE.Vector3(faceX, faceY,faceZ);
 
-            var randomPos = new THREE.Vector3((Math.random() * 10000 + 10000) * (Math.random() > 0.5 ? 1: -1), 
+            var randomPos = new THREE.Vector3((Math.random() * 10000 + 10000) * (Math.random() > 0.5 ? 1: -1),
                 (Math.random() * 10000 + 10000) * (Math.random() > 0.5 ? 1: -1),
                 Math.random() * 5000 - 5000) ;
-            var randomTarget = new THREE.Vector3(Math.random() * 8000 - 4000, 
+            var randomTarget = new THREE.Vector3(Math.random() * 8000 - 4000,
                 Math.random() * 8000 - 4000,
                 Math.random() * 5000) ;
 
@@ -634,10 +407,10 @@ function createCvElements(){
                         thisSectionY + Math.cos(theta) * r,
                         thisSectionZ + Math.random() * 300 - 500)
 
-                    var randomItemPos = new THREE.Vector3((Math.random() * 10000 + 10000) * (Math.random() > 0.5 ? 1: -1), 
+                    var randomItemPos = new THREE.Vector3((Math.random() * 10000 + 10000) * (Math.random() > 0.5 ? 1: -1),
                         ( Math.random() * 10000 + 10000 ) * ( Math.random() > 0.5 ? 1: -1 ),
                         Math.random() * 5000 - 5000) ;
-                    var randomItemTarget = new THREE.Vector3(Math.random() * 8000 - 4000, 
+                    var randomItemTarget = new THREE.Vector3(Math.random() * 8000 - 4000,
                         Math.random() * 8000 - 4000,
                         Math.random() * 5000) ;
 
@@ -660,7 +433,7 @@ function createCvElements(){
                 else{
                     var thisNode = document.createElement("div");
                     thisNode.className = cvitem_name +"-" + cvsection_name;
-                    thisNode.textContent = currentLang === 0 ? "返回" : "Return";;
+                    thisNode.textContent = "Return";
                     //thisNode.textContent = SectionObject[cvsection_name];
                     thisSectionNode.appendChild(thisNode);
                 }
@@ -674,7 +447,7 @@ function createCvElements(){
             var thisNode = document.createElement("div");
             thisNode.className = "namecard-"+cvitem_name;
 
-            thisNode.textContent = currentcv[cvitem_name];
+            thisNode.textContent = cv[cvitem_name];
             namecardNode.appendChild(thisNode);
         }
     }
@@ -689,11 +462,5 @@ function createCvElements(){
     object.position.x = 0;
     object.position.y = 0;
     object.position.z = 6000;
-    
-}
-
-
-function switchLang(){
-
 
 }

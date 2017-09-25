@@ -12,7 +12,6 @@ var prvTarget;
 var sceneWebgl, rendererWebgl;
 
 window.onload = function(){
-	bindLangSwitcher();
     setup();
     animate();
 }
@@ -47,13 +46,13 @@ function setup(){
 
     scene.add( camera );
 
-    createParticles();
+    //createParticles();
     createCvElements();
 
     window.addEventListener( 'resize', onWindowResize, false );
     //window.addEventListener( 'mousewheel', mousewheel, false );
 }
-
+/*
 function createParticles(){
 
 
@@ -74,11 +73,11 @@ function createParticles(){
         } );
         var geo = new THREE.Geometry();
         for(var j = 0; j < seg; j++)
-        { 
+        {
             var the = (j/(seg-1)) * PI2;
             geo.vertices.push(new THREE.Vector3(
-            thisPartiX + Math.cos(the) * rad, 
-            thisPartiY + Math.sin(the) * rad, 
+            thisPartiX + Math.cos(the) * rad,
+            thisPartiY + Math.sin(the) * rad,
             thisPartiZ));
         }
         var ln = new THREE.Line(geo, mat);
@@ -99,13 +98,13 @@ function particleUpdate(){
         particle.position.z += Math.random() * 2 - 1;
     }
 }
-
-function transform(target,loca, duration){
+*/
+function transform(target, location, duration){
     TWEEN.removeAll();
-    
+
     //camera from
     new TWEEN.Tween(camera.position )
-        .to( { x:  loca.x +Math.random() * 500 - 250, y: loca.y +Math.random() * 500 - 250, z: loca.z },  duration )
+        .to( { x:  location.x +Math.random() * 500 - 250, y: location.y +Math.random() * 500 - 250, z: location.z },  duration )
         .easing( TWEEN.Easing.Exponential.InOut )
         .start();
     //camera target
@@ -113,20 +112,20 @@ function transform(target,loca, duration){
         .to( { x:  target.x, y: target.y, z: target.z }, duration  )
         .easing( TWEEN.Easing.Exponential.InOut )
         .onUpdate(function(){
-            camera.lookAt(prvTarget); 
+            camera.lookAt(prvTarget);
             //console.log(prvtarget);
             })
         .start();
     //prvTarget = target;
 }
-function flyTo(target,loca, sectionname, duration){
-    var objs = cv_objects[sectionname+"Objects"];
-    var desireObjs = cv_objects[sectionname+"Desired"];
+function flyTo(target, location, sectionName, duration){
+    var objs = cv_objects[sectionName+"Objects"];
+    var desireObjs = cv_objects[sectionName+"Desired"];
 
     TWEEN.removeAll();
 
     new TWEEN.Tween(camera.position )
-        .to( { x:  loca.x +Math.random() * 500 - 250, y: loca.y +Math.random() * 500 - 250, z: loca.z },  duration )
+        .to( { x:  location.x +Math.random() * 500 - 250, y: location.y +Math.random() * 500 - 250, z: location.z },  duration )
         .easing( TWEEN.Easing.Exponential.InOut )
         .start();
     //camera target
@@ -134,7 +133,7 @@ function flyTo(target,loca, sectionname, duration){
         .to( { x:  target.x, y: target.y, z: target.z }, duration  )
         .easing( TWEEN.Easing.Exponential.InOut )
         .onUpdate(function(){
-            camera.lookAt(prvTarget); 
+            camera.lookAt(prvTarget);
             //console.log(prvtarget);
             })
         .start();
@@ -154,21 +153,22 @@ function flyTo(target,loca, sectionname, duration){
             .easing( TWEEN.Easing.Exponential.InOut )
             .start();
     }
-    
+
     new TWEEN.Tween( this )
         .to( {}, duration * 2 )
         .onUpdate( render )
         .start();
 
 }
-function flyAway(target,loca, sectionname, duration){
-    var objs = cv_objects[sectionname+"Objects"];
-    var desireObjs = cv_objects[sectionname+"Desired"];
+
+function flyAway(target,location, sectionName, duration){
+    var objs = cv_objects[sectionName+"Objects"];
+    var desireObjs = cv_objects[sectionName+"Desired"];
 
     TWEEN.removeAll();
 
     new TWEEN.Tween(camera.position )
-        .to( { x:  loca.x +Math.random() * 500 - 250, y: loca.y +Math.random() * 500 - 250, z: loca.z },  duration )
+        .to( { x:  location.x +Math.random() * 500 - 250, y: location.y +Math.random() * 500 - 250, z: location.z },  duration )
         .easing( TWEEN.Easing.Exponential.InOut )
         .start();
     //camera target
@@ -176,7 +176,7 @@ function flyAway(target,loca, sectionname, duration){
         .to( { x:  target.x, y: target.y, z: target.z }, duration  )
         .easing( TWEEN.Easing.Exponential.InOut )
         .onUpdate(function(){
-            camera.lookAt(prvTarget); 
+            camera.lookAt(prvTarget);
             //console.log(prvtarget);
             })
         .start();
@@ -185,10 +185,10 @@ function flyAway(target,loca, sectionname, duration){
 
         var movingobject = objs[ i ];
 
-         var randomItemPos = new THREE.Vector3((Math.random() * 10000 + 10000) * (Math.random() > 0.5 ? 1: -1), 
+         var randomItemPos = new THREE.Vector3((Math.random() * 10000 + 10000) * (Math.random() > 0.5 ? 1: -1),
                     (Math.random() * 10000 + 10000) * (Math.random() > 0.5 ? 1: -1),
                     Math.random() * 5000 - 5000) ;
-        var randomItemTarget = new THREE.Vector3(Math.random() , 
+        var randomItemTarget = new THREE.Vector3(Math.random() ,
             Math.random(),
             Math.random());
 
@@ -215,7 +215,7 @@ function animate() {
 }
 
 function render() {
-    particleUpdate();
+    //particleUpdate();
     renderer.render( scene, camera );
     rendererWebgl.render( sceneWebgl, camera );
     cameraWander();
@@ -258,39 +258,11 @@ function mousewheel( event ) {
         camera.position.z += delta * 100 ;
 
     }
+
 function cameraWander(){
     var myDate=new Date() / 2000;
     var rad = 1;
     camera.position.x += Math.sin(myDate) * rad;
     camera.position.y += Math.cos(myDate) * rad / 5;
     camera.lookAt(prvTarget);
-}
-
-function bindLangSwitcher(){
-
-	var langcn = document.getElementById("cn");
-	var langen = document.getElementById("en");
-	langcn.addEventListener("click", function(){
-		if (currentLang === 0)
-			return;
-		else{
-			currentLang = 0;
-			document.getElementById( 'container' ).innerHTML = '';
-			document.getElementById( 'title' ).innerHTML = '马逸东简历';
-			setup();
-    		animate();
-		}
-
-	});
-	langen.addEventListener("click", function(){
-		if (currentLang === 1)
-			return;
-		else{
-			currentLang = 1;
-			document.getElementById( 'container' ).innerHTML = '';
-			document.getElementById( 'title' ).innerHTML = 'Resume of Ma Yidong';
-			setup();
-    		animate();
-		}
-	});
 }
