@@ -10,16 +10,3 @@ body {
 
 html, body {
   height: 100%; }
-
-.lang {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  font-size: 0.6em; }
-  .lang span {
-    padding: 10px; }
-  .lang span:hover {
-    text-shadow: 0 0 2px #ffd; }
-  .lang span:active {
-    text-shadow: 0 0 5px #ccc;
-    color: #ccc; }

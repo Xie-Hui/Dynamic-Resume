@@ -7,7 +7,7 @@ var fixcamera;
 var controler;
 var cameraHelper;
 var activecamera;
-var vanishPt;
+var prvTarget;
 
 var sceneWebgl, rendererWebgl;
 
@@ -23,8 +23,8 @@ function setup(){
     //camera.fov = 10;
     scene = new THREE.Scene();
     sceneWebgl = new THREE.Scene();
-    vanishPt = new THREE.Vector3(0,0,6000);
-    camera.lookAt(vanishPt);
+    prvTarget = new THREE.Vector3(0,0,6000);
+    camera.lookAt(prvTarget);
     sceneWebgl.fog = new THREE.Fog(0x11132d, 1, 10000);
     //sceneWebgl.add( new THREE.AmbientLight( 0x333333 ) );
 
@@ -100,56 +100,64 @@ function particleUpdate(){
 }
 */
 function transform(target, location, duration){
-    //TWEEN.removeAll();
-    //move camera to starting location
-    new TWEEN.Tween(target )
-        .to( {
-            x: location.x,
-            y: location.y,
-            z: location.z
-         },  duration )
+    TWEEN.removeAll();
+
+    //camera from
+    new TWEEN.Tween(camera.position )
+        .to( { x:  location.x +Math.random() * 500 - 250, y: location.y +Math.random() * 500 - 250, z: location.z },  duration )
         .easing( TWEEN.Easing.Exponential.InOut )
         .start();
+    //camera target
+    new TWEEN.Tween( prvTarget )
+        .to( { x:  target.x, y: target.y, z: target.z }, duration  )
+        .easing( TWEEN.Easing.Exponential.InOut )
+        .onUpdate(function(){
+            camera.lookAt(prvTarget);
+            //console.log(prvtarget);
+            })
+        .start();
+    //prvTarget = target;
 }
-
 function flyTo(target, location, sectionName, duration){
     var objs = cv_objects[sectionName+"Objects"];
     var desireObjs = cv_objects[sectionName+"Desired"];
 
     TWEEN.removeAll();
 
-
     new TWEEN.Tween(camera.position )
-        .to( {
-            x: location.x,
-            y: location.y,
-            z: location.z
-         },  duration )
+        .to( { x:  location.x +Math.random() * 500 - 250, y: location.y +Math.random() * 500 - 250, z: location.z },  duration )
         .easing( TWEEN.Easing.Exponential.InOut )
         .start();
-
     //camera target
-    new TWEEN.Tween( vanishPt )
-        .to( {
-            x: target.x,
-            y: target.y,
-            z: target.z
-         }, duration  )
+    new TWEEN.Tween( prvTarget )
+        .to( { x:  target.x, y: target.y, z: target.z }, duration  )
         .easing( TWEEN.Easing.Exponential.InOut )
         .onUpdate(function(){
-            camera.lookAt(vanishPt);
-            //console.log(vanishPt);
+            camera.lookAt(prvTarget);
+            //console.log(prvtarget);
             })
         .start();
+
     for ( var i = 0; i < objs.length; i ++ ) {
 
         var movingobject = objs[ i ];
         var target = desireObjs[ i ];
 
-        transform(movingobject.position, target.position, duration * 0.5)
-        transform(movingobject.rotation, target.rotation, duration * 0.5)
+        new TWEEN.Tween( movingobject.position )
+            .to( { x: target.position.x, y: target.position.y, z: target.position.z }, Math.random() * duration + duration*0.5 )
+            .easing( TWEEN.Easing.Exponential.InOut )
+            .start();
 
+        new TWEEN.Tween( movingobject.rotation )
+            .to( { x: target.rotation.x, y: target.rotation.y, z: target.rotation.z }, Math.random() * duration + duration*0.5 )
+            .easing( TWEEN.Easing.Exponential.InOut )
+            .start();
     }
+
+    new TWEEN.Tween( this )
+        .to( {}, duration * 2 )
+        .onUpdate( render )
+        .start();
 
 }
 
@@ -160,51 +168,44 @@ function flyAway(target,location, sectionName, duration){
     TWEEN.removeAll();
 
     new TWEEN.Tween(camera.position )
-        .to( {
-            x: location.x,
-            y: location.y,
-            z: location.z
-         },  duration )
+        .to( { x:  location.x +Math.random() * 500 - 250, y: location.y +Math.random() * 500 - 250, z: location.z },  duration )
         .easing( TWEEN.Easing.Exponential.InOut )
         .start();
     //camera target
-    new TWEEN.Tween( vanishPt )
-        .to( {
-            x: target.x,
-            y: target.y,
-            z: target.z
-         }, duration  )
+    new TWEEN.Tween( prvTarget )
+        .to( { x:  target.x, y: target.y, z: target.z }, duration  )
         .easing( TWEEN.Easing.Exponential.InOut )
         .onUpdate(function(){
-            camera.lookAt(vanishPt);
-            //console.log(vanishPt);
+            camera.lookAt(prvTarget);
+            //console.log(prvtarget);
             })
         .start();
-
 
     for ( var i = 0; i < objs.length; i ++ ) {
 
         var movingobject = objs[ i ];
 
-        /*
-         var randomItemPos = new THREE.Vector3((Math.random() * 10 + 10) * (Math.random() > 0.5 ? 1: -1),
-                    (Math.random() * 10 + 10) * (Math.random() > 0.5 ? 1: -1),
-                    Math.random() * 5 - 5) ;
-        */
-        var randomItemPos = new THREE.Vector3(100, 0, 0)
-        /*
+         var randomItemPos = new THREE.Vector3((Math.random() * 10000 + 10000) * (Math.random() > 0.5 ? 1: -1),
+                    (Math.random() * 10000 + 10000) * (Math.random() > 0.5 ? 1: -1),
+                    Math.random() * 5000 - 5000) ;
         var randomItemTarget = new THREE.Vector3(Math.random() ,
             Math.random(),
-            Math.random()
-        )
-        */
-        var randomItemTarget = randomItemPos
+            Math.random());
 
-        transform(movingobject.position, randomItemPos, duration * 0.5)
-        transform(movingobject.rotation, target.rotation, duration * 0.5)
+        new TWEEN.Tween( movingobject.position )
+            .to( { x: randomItemPos.x, y: randomItemPos.y, z: randomItemPos.z }, Math.random() * duration + duration*0.5 )
+            .easing( TWEEN.Easing.Exponential.InOut )
+            .start();
 
+        new TWEEN.Tween( movingobject.rotation )
+            .to( { x: randomItemTarget.x, y: randomItemTarget.y, z: randomItemTarget.z }, Math.random() * duration + duration*0.5 )
+            .easing( TWEEN.Easing.Exponential.InOut )
+            .start();
     }
-
+    new TWEEN.Tween( this )
+        .to( {}, duration * 2 )
+        .onUpdate( render )
+        .start();
 }
 
 function animate() {
@@ -216,8 +217,8 @@ function animate() {
 function render() {
     //particleUpdate();
     renderer.render( scene, camera );
-    //rendererWebgl.render( sceneWebgl, camera );
-    //cameraWander();
+    rendererWebgl.render( sceneWebgl, camera );
+    cameraWander();
 }
 
 function onWindowResize() {
@@ -263,5 +264,5 @@ function cameraWander(){
     var rad = 1;
     camera.position.x += Math.sin(myDate) * rad;
     camera.position.y += Math.cos(myDate) * rad / 5;
-    camera.lookAt(vanishPt);
+    camera.lookAt(prvTarget);
 }

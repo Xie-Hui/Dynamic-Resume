@@ -254,8 +254,7 @@ function createCvElements(){
 
     var namecardNode = document.createElement("div");
     namecardNode.className = "namecard"+"-container";
-    //console.log(namecardNode.className);
-    container.appendChild(namecardNode);
+    //container.appendChild(namecardNode);
 
     var cvKeys = Object.keys(cv);
     //console.log(cvKeys.length);
@@ -265,19 +264,17 @@ function createCvElements(){
         var cvitem_name = cvKeys[i];
         var SectionObject = cv[cvitem_name];
         if(SectionObject instanceof Object){ //if sectionObject is a valid object e.g. has multiple entries contents
-            //console.log(SectionObject);
+            console.log(SectionObject);
             var thisKeys = Object.keys(SectionObject);//name, prohect1, project2.....
 
             //create element for this section, ie projects, educationBackground etc.
             var thisSectionNode = document.createElement("div");
             thisSectionNode.className = cvitem_name +"-container";
-            //console.log(thisSectionNode.className);
             //thisSectionNode.className = "cvsection-name-container";
             container.appendChild(thisSectionNode);
 
             var thisSectionNavNode = document.createElement("div");
             thisSectionNavNode.className = cvitem_name + "-container";
-            console.log(thisSectionNavNode.className);
             //console.log(SectionObject);
             var temp_name = thisKeys[0];
             var tempNode = document.createElement("div");
@@ -376,7 +373,6 @@ function createCvElements(){
 
                     var thisSectionItemNode = document.createElement("div");
                     thisSectionItemNode.className = cvitem_name +"-item-container";
-                    //console.log(thisSectionItemNode.className);
                     container.appendChild(thisSectionItemNode);
                     //console.log(SectionItemObject);
                     //console.log(sectionItemNames);
@@ -400,7 +396,7 @@ function createCvElements(){
                         else{
                             thisNode.className = cvitem_name +"-" + itemName;
                             thisNode.textContent = SectionItemObject[itemName];
-                            console.log(thisNode.textContent);
+                            //console.log(thisNode.textContent);
                         }
                         thisSectionItemNode.appendChild(thisNode);
 
@@ -446,9 +442,6 @@ function createCvElements(){
                     thisNode.textContent = "Return";
                     //thisNode.textContent = SectionObject[cvsection_name];
                     thisSectionNode.appendChild(thisNode);
-                    //console.log(thisKeys[j]);
-                    //console.log(thisNode);
-                    //console.log(thisNode.className);
                 }
 
             }
@@ -459,7 +452,6 @@ function createCvElements(){
         else{
             var thisNode = document.createElement("div");
             thisNode.className = "namecard-"+cvitem_name;
-            //console.log(thisNode.className);
 
             thisNode.textContent = cv[cvitem_name];
             namecardNode.appendChild(thisNode);
@@ -472,5 +464,9 @@ function createCvElements(){
     object.position.z = 6000;
     scene.add( object );
 
+    var object = new THREE.Object3D();
+    object.position.x = 0;
+    object.position.y = 0;
+    object.position.z = 6000;
 
 }

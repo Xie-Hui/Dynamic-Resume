@@ -1,7 +1,3 @@
-var lang = ["cn", "en"];
-
-var currentLang = 0;
-
 var camera, scene, renderer;
 var fixcamera;
 var controler;
@@ -49,56 +45,8 @@ function setup(){
     //createParticles();
     createCvElements();
 
-    window.addEventListener( 'resize', onWindowResize, false );
-    //window.addEventListener( 'mousewheel', mousewheel, false );
-}
-/*
-function createParticles(){
-
-
-    group = new THREE.Group();
-    sceneWebgl.add( group );
-
-    var PI2 = Math.PI * 2;
-    var seg = 20;
-    var rad = 10;
-    var particleCount = 5000;
-    for(var i = 0; i < particleCount; i++){
-        var thisPartiX = Math.random() * 20000 - 10000;
-        var thisPartiY = Math.random() * 20000 - 10000;
-        var thisPartiZ = Math.random() * 6000;
-        var mat = new THREE.LineBasicMaterial( {
-            color: new THREE.Color( 0x001241 + Math.random() * 0x00eeee ),
-            linewidth:10
-        } );
-        var geo = new THREE.Geometry();
-        for(var j = 0; j < seg; j++)
-        {
-            var the = (j/(seg-1)) * PI2;
-            geo.vertices.push(new THREE.Vector3(
-            thisPartiX + Math.cos(the) * rad,
-            thisPartiY + Math.sin(the) * rad,
-            thisPartiZ));
-        }
-        var ln = new THREE.Line(geo, mat);
-        mat = null;
-        geo = null;
-        group.add(ln);
-        //console.log(ln);
-
-    }
-
 }
 
-function particleUpdate(){
-    for(var i in group.children){
-        var particle = group.children[i];
-        particle.position.x += Math.random() * 2 - 1;
-        particle.position.y += Math.random() * 2 - 1;
-        particle.position.z += Math.random() * 2 - 1;
-    }
-}
-*/
 function transform(target, location, duration){
     //TWEEN.removeAll();
     //move camera to starting location
@@ -218,50 +166,4 @@ function render() {
     renderer.render( scene, camera );
     //rendererWebgl.render( sceneWebgl, camera );
     //cameraWander();
-}
-
-function onWindowResize() {
-
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-
-    renderer.setSize( window.innerWidth, window.innerHeight );
-    rendererWebgl.setSize( window.innerWidth, window.innerHeight );
-
-    render();
-
-}
-
-function mousewheel( event ) {
-
-
-        event.preventDefault();
-        event.stopPropagation();
-
-        var delta = 0;
-
-        if ( event.wheelDelta ) {
-
-            // WebKit / Opera / Explorer 9
-
-            delta = event.wheelDelta / 40;
-
-        } else if ( event.detail ) {
-
-            // Firefox
-
-            delta = - event.detail / 3;
-
-        }
-
-        camera.position.z += delta * 100 ;
-
-    }
-
-function cameraWander(){
-    var myDate=new Date() / 2000;
-    var rad = 1;
-    camera.position.x += Math.sin(myDate) * rad;
-    camera.position.y += Math.cos(myDate) * rad / 5;
-    camera.lookAt(vanishPt);
 }

@@ -222,24 +222,48 @@ var cv = {
 
 }
 
-function constructCvElement(
-    parentNode = document.getElementById("container"),
-    JsonData = cv,
-    treeDepth = 0
+function createDOM(
+    parentNode = document.getElementById("container"),  //default
+    JsonData = cv,  //default
+    treeDepth = 0   //default
 ){
     //
     for (key in JsonData){
-
-        console.log(key);
+        //console.log(key);
         var newNode = document.createElement("div")
-        newNode.textContent = key + "-" + treeDepth
-        newNode.className = key + "-" + treeDepth
-        if (JsonData[key] instanceof Object){
 
-            constructCvElement(newNode, JsonData[key], treeDepth + 1)
-            parentNode.appendChild(newNode)
+        //newNode.textContent = JsonData[key]
+        //newNode.textContent = key
+        newNode.className = key
+
+        if (JsonData[key] instanceof Object){
+            newNode.className += "-container"
+            createDOM(newNode, JsonData[key], treeDepth + 1)
         }
+        else {
+            if (treeDepth == 0) {
+                //init namecardNode if not exsit
+                if (!namecardNode) {
+                    var namecardNode = document.createElement("div")
+                    namecardNode.className = "namecard"+"-container";
+                    parentNode.appendChild(namecardNode);
+                }
+                // assign namecard prefix to root level dom nodes etc. logo, title, intro, ...
+                newNode.className = "namecard-" + key
+            }
+            newNode.textContent = JsonData[key]
+        }
+        parentNode.appendChild(newNode)
     }
 }
-
-constructCvElement()
+function createCvElements() {
+    createDOM()
+    var namecardNode = document.getElementsByClassName("namecard-container")[0]
+    var object = new THREE.CSS3DObject( namecardNode );
+    object.position = {
+        x : 0,
+        y : 0,
+        z : 6000
+    }
+    scene.add( object );
+}
