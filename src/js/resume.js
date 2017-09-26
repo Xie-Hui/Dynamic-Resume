@@ -264,7 +264,7 @@ function createCvElements(){
         var cvitem_name = cvKeys[i];
         var SectionObject = cv[cvitem_name];
         if(SectionObject instanceof Object){ //if sectionObject is a valid object e.g. has multiple entries contents
-
+            console.log(SectionObject);
             var thisKeys = Object.keys(SectionObject);//name, prohect1, project2.....
 
             //create element for this section, ie projects, educationBackground etc.
