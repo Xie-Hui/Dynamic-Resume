@@ -275,7 +275,7 @@ function createCvElements(){
 
             var thisSectionNavNode = document.createElement("div");
             thisSectionNavNode.className = cvitem_name + "-container";
-            //console.log();
+            //console.log(SectionObject);
             var temp_name = thisKeys[0];
             var tempNode = document.createElement("div");
             tempNode.className = cvitem_name +"-"+ temp_name;
@@ -288,10 +288,12 @@ function createCvElements(){
             tempNode.textContent = SectionObject[temp_name];
             thisSectionNavNode.appendChild(tempNode);
             container.appendChild(thisSectionNavNode);
+            //console.log(SectionObject[temp_name]);
 
 
             //navigation-block
             var len = cvKeys.length;
+            //console.log(cvKeys);
             var r = 180 + Math.random() * 50;
             var theta = Math.random() * (6/len) + i * (12/len);
             var navX = 900 - 150 * i;
@@ -333,7 +335,7 @@ function createCvElements(){
             objDesire.position.copy(newPosition);
             objDesire.lookAt(faceTarget);
 
-            console.log(cvitem_name+"Objects");
+            //console.log(cvitem_name+"Objects");
             cv_objects[cvitem_name+"Objects"].push(obj);
             cv_objects[cvitem_name+"Desired"].push(objDesire);
 
@@ -372,6 +374,7 @@ function createCvElements(){
                     thisSectionItemNode.className = cvitem_name +"-item-container";
                     container.appendChild(thisSectionItemNode);
                     //console.log(SectionItemObject);
+                    //console.log(sectionItemNames);
 
                     for(var k = 0; k < sectionItemNames.length; k++){
                         var itemName = sectionItemNames[k];
@@ -392,6 +395,7 @@ function createCvElements(){
                         else{
                             thisNode.className = cvitem_name +"-" + itemName;
                             thisNode.textContent = SectionItemObject[itemName];
+                            //console.log(thisNode.textContent);
                         }
                         thisSectionItemNode.appendChild(thisNode);
 
