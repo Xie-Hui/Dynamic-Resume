@@ -224,8 +224,10 @@ var cv = {
 
 var nodePositions = {};
 var auxBoxes = {};
-var oriTarget = new THREE.Vector3(0,0,6000);
-var oriFrom = new THREE.Vector3(0,0,7500);
+//var oriTarget = new THREE.Vector3(0,0,6000);
+//var oriFrom = new THREE.Vector3(0,0,7500);
+var oriTarget = new THREE.Vector3(0,0,8000);
+var oriFrom = new THREE.Vector3(0,0,10000);
 var icons = {
     "github":"fa fa-github",
     "zhihu":"fa fa-comment",
@@ -277,7 +279,7 @@ function createCvElements(){
 
             var thisSectionNavNode = document.createElement("div");
             thisSectionNavNode.className = cvitem_name + "-container";
-            console.log(thisSectionNavNode.className);
+            //console.log(thisSectionNavNode.className);
             //console.log(SectionObject);
             var temp_name = thisKeys[0];
             var tempNode = document.createElement("div");
@@ -318,8 +320,8 @@ function createCvElements(){
             var thisSectionZ = Math.random() * 1000 + 2000;
             var newPosition = new THREE.Vector3(thisSectionX,thisSectionY,thisSectionZ)
 
-            var faceX = thisSectionX +  Math.random() * 1000 - 500;
-            var faceY = thisSectionY +  Math.random() * 1000 - 500;
+            var faceX = thisSectionX;
+            var faceY = thisSectionY;
             var faceZ = thisSectionZ + 1500 ;
             var faceTarget= new THREE.Vector3(faceX, faceY,faceZ);
 
@@ -352,6 +354,7 @@ function createCvElements(){
                 var targetObject = nodePositions[this.className+"target"];
                 var targetVector = nodePositions[this.className+"vector"];
                 var targetName = nodePositions[this.className+"name"];
+                console.log(targetName);
                 //transform(targetObject.position,targetVector, 1500);
                 flyTo(targetObject.position,targetVector, targetName, 1000);
             }, false);
@@ -361,6 +364,7 @@ function createCvElements(){
                 //transform(oriTarget,oriFrom, 1500);
                 flyAway(oriTarget,oriFrom, targetName, 1000);
             }, false);
+
 
              //console.log(SectionObject);
 
@@ -400,7 +404,7 @@ function createCvElements(){
                         else{
                             thisNode.className = cvitem_name +"-" + itemName;
                             thisNode.textContent = SectionItemObject[itemName];
-                            console.log(thisNode.textContent);
+                            //console.log(thisNode.textContent);
                         }
                         thisSectionItemNode.appendChild(thisNode);
 
@@ -467,6 +471,7 @@ function createCvElements(){
     }
 
     var object = new THREE.CSS3DObject( namecardNode );
+    console.log(namecardNode);
     object.position.x = 0;
     object.position.y = 0;
     object.position.z = 6000;
