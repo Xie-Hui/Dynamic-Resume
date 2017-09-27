@@ -4,7 +4,7 @@
 /*Mozilla*/
 /*new gradient for Webkit*/
 /*Opera11*/
-.namecard-container {
+.container {
   position: absolute;
   top: 0;
   left: 0;
@@ -16,7 +16,7 @@
   box-shadow: 0 0 25px #618c8e;
   background: rgba(30, 69, 76, 0.8);
   transition: all 0.2s ease; }
-  .namecard-container .namecard-logo {
+  .container .container-logo {
     height: 200px;
     width: 200px;
     position: absolute;
@@ -26,9 +26,9 @@
     background-size: 200px 200px;
     background-repeat: no-repeat;
     transition: all 0.5s ease; }
-  .namecard-container .namecard-logo:hover {
+  .container .container-logo:hover {
     background-image: url(../img/pb-temp.svg); }
-  .namecard-container .namecard-name {
+  .container .container-name {
     position: absolute;
     left: 225px;
     top: 25px;
@@ -36,7 +36,7 @@
     font-weight: 200;
     font-size: 2.5em;
     text-shadow: 0 0 12px #ffd; }
-  .namecard-container .namecard-title {
+  .container .container-title {
     position: absolute;
     left: 225px;
     top: 125px;
@@ -47,7 +47,7 @@
     font-size: 1.2em;
     border-bottom: 5px solid #7c97a0;
     text-shadow: 0 0 12px #ffd; }
-  .namecard-container .namecard-intro {
+  .container .container-intro {
     position: absolute;
     top: 250px;
     width: 600px;
@@ -55,18 +55,18 @@
     padding-top: 12px;
     text-align: left;
     text-align-last: left; }
-  .namecard-container .namecard-quote:after {
+  .container .container-quote:after {
     display: inline-block;
     content: '';
     overflow: hidden;
     width: 100%;
     height: 0; }
 
-.namecard-container:hover {
+.container:hover {
   box-shadow: 0 0 25px 0px #8fb7a3;
   border: 2px solid #ccc; }
 
-.educationBackground-container {
+.container-educationBackground- {
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
@@ -77,17 +77,17 @@
   background: -o-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(99, 109, 148, 0.8));
   text-align: center;
   z-index: 2; }
-  .educationBackground-container .educationBackground-title {
+  .container-educationBackground- .educationBackground-title {
     font-size: 1.2em;
     padding-top: 15px;
     padding-bottom: 15px;
     font-weight: 400; }
 
-.educationBackground-container:hover {
+.container-educationBackground-:hover {
   text-shadow: 0 0 2px #ffd;
   box-shadow: 0 0 15px #8fb7a3; }
 
-.educationBackground-container:active {
+.container-educationBackground-:active {
   background: -moz-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8));
   background: -webkit-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8));
   background: -o-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8)); }
@@ -140,7 +140,7 @@
   margin-right: 25px;
   margin-top: 12px; }
 
-.projects-container {
+.container-projects- {
   position: absolute;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
@@ -152,18 +152,18 @@
   background: -o-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(99, 109, 148, 0.8));
   text-align: center;
   z-index: 2; }
-  .projects-container .projects-title {
+  .container-projects- .projects-title {
     font-size: 1.2em;
     padding: 10px;
     padding-top: 15px;
     padding-bottom: 15px;
     font-weight: 400; }
 
-.projects-container:hover {
+.container-projects-:hover {
   text-shadow: 0 0 2px #ffd;
   box-shadow: 0 0 15px #8fb7a3; }
 
-.projects-container:active {
+.container-projects-:active {
   background: -moz-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8));
   background: -webkit-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8));
   background: -o-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8)); }
@@ -199,7 +199,7 @@
   font-size: 1.2em;
   padding: 5px; }
 
-.awards-container {
+.container-awards- {
   position: absolute;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
@@ -211,7 +211,7 @@
   background: -o-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(99, 109, 148, 0.8));
   text-align: center;
   z-index: 2; }
-  .awards-container .awards-title {
+  .container-awards- .awards-title {
     font-size: 1.2em;
     padding: 10px;
     padding-top: 15px;
@@ -250,16 +250,16 @@
   padding-top: 5px;
   padding-bottom: 5px; }
 
-.awards-container:hover {
+.container-awards-:hover {
   text-shadow: 0 0 2px #ffd;
   box-shadow: 0 0 15px #8fb7a3; }
 
-.awards-container:active {
+.container-awards-:active {
   background: -moz-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8));
   background: -webkit-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8));
   background: -o-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8)); }
 
-.workExperience-container {
+.container-workExperience- {
   position: absolute;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
@@ -271,7 +271,7 @@
   background: -o-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(99, 109, 148, 0.8));
   text-align: center;
   z-index: 2; }
-  .workExperience-container .workExperience-title {
+  .container-workExperience- .workExperience-title {
     font-size: 1.2em;
     padding: 10px;
     padding-top: 15px;
@@ -309,16 +309,16 @@
   width: 150px;
   font-size: 1.2em; }
 
-.workExperience-container:hover {
+.container-workExperience-:hover {
   text-shadow: 0 0 2px #ffd;
   box-shadow: 0 0 15px #8fb7a3; }
 
-.workExperience-container:active {
+.container-workExperience-:active {
   background: -moz-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8));
   background: -webkit-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8));
   background: -o-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8)); }
 
-.skills-container {
+.container-skills- {
   position: absolute;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
@@ -330,7 +330,7 @@
   background: -o-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(99, 109, 148, 0.8));
   text-align: center;
   z-index: 2; }
-  .skills-container .skills-title {
+  .container-skills- .skills-title {
     font-size: 1.2em;
     padding: 10px;
     padding-top: 15px;
@@ -360,11 +360,11 @@
 .skills-intro {
   clear: both; }
 
-.skills-container:hover {
+.container-skills-:hover {
   text-shadow: 0 0 2px #ffd;
   box-shadow: 0 0 15px #8fb7a3; }
 
-.skills-container:active {
+.container-skills-:active {
   background: -moz-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8));
   background: -webkit-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8));
   background: -o-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8)); }

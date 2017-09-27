@@ -305,11 +305,13 @@ function createCvElements(){
             var navY =  -220;
             var navZ = 6000;
 
+            
             var object = new THREE.CSS3DObject( thisSectionNavNode );
             object.position.x = navX;
             object.position.y = navY;
             object.position.z = navZ;
             scene.add( object );
+
 
             //section-block
             var sectionr = 3000 + Math.random() * 1000;
@@ -440,6 +442,7 @@ function createCvElements(){
                     cv_objects[cvitem_name+"Objects"].push(object);
                     cv_objects[cvitem_name+"Desired"].push(objItemDesire);
                     //console.log(cv_objects);
+
 
                 }
 

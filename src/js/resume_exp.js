@@ -230,9 +230,9 @@ function createHorizontalLayout(
     z = 6000
 ){
     return ({
-        x: x - width * currentIndex,
-        y: y,
-        z: z
+        "x": x - width * currentIndex,
+        "y": y,
+        "z": z
     })
 }
 
@@ -255,24 +255,27 @@ function createDOM(
     for (key in JsonData){
         //console.log(key);
         var newNode = document.createElement("div")
-        var containerCount = 0
         if (JsonData[key] instanceof Object){
-            newNode.className = parentNode.className  + "+" + key
-            newNode.textContent = newNode.className + ":" + key
+
+            newNode.className = parentNode.className  + "-" + key + "-"
+            newNode.textContent = key
+            //create CSS obj
+            if (treeDepth == 0) {
+                console.log(": " + key)
+                var position = createHorizontalLayout(Object.keys(JsonData).indexOf(key))
+                createCSSobj(newNode, position)
+                console.log(newNode);
+                //console.log(Object.keys(JsonData).indexOf(key));
+                console.log(position);
+            }
             //newNode.textContent = key
             //console.log(JsonData.keys().indexOf(key));
             createDOM(newNode, JsonData[key], treeDepth + 1)
             parentNode.appendChild(newNode)
-            //create CSS obj
-            var position = createHorizontalLayout(containerCount)
-            containerCount++
-            console.log(position);
-            console.log(containerCount);
-            createCSSobj(newNode, position)
         }
         else {
             newNode.className = parentNode.className  + "-" + key
-            newNode.textContent = newNode.className + ":" + JsonData[key]
+            newNode.textContent = JsonData[key]
             parentNode.appendChild(newNode)
             //newNode.textContent = JsonData[key]
         }
