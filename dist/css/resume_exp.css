@@ -4,7 +4,7 @@
 /*Mozilla*/
 /*new gradient for Webkit*/
 /*Opera11*/
-.container {
+.namecard-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -16,7 +16,7 @@
   box-shadow: 0 0 25px #618c8e;
   background: rgba(30, 69, 76, 0.8);
   transition: all 0.2s ease; }
-  .container .container-logo {
+  .namecard-container .logo {
     height: 200px;
     width: 200px;
     position: absolute;
@@ -26,9 +26,9 @@
     background-size: 200px 200px;
     background-repeat: no-repeat;
     transition: all 0.5s ease; }
-  .container .container-logo:hover {
+  .namecard-container .logo:hover {
     background-image: url(../img/pb-temp.svg); }
-  .container .container-name {
+  .namecard-container .name {
     position: absolute;
     left: 225px;
     top: 25px;
@@ -36,7 +36,7 @@
     font-weight: 200;
     font-size: 2.5em;
     text-shadow: 0 0 12px #ffd; }
-  .container .container-title {
+  .namecard-container .title {
     position: absolute;
     left: 225px;
     top: 125px;
@@ -47,7 +47,7 @@
     font-size: 1.2em;
     border-bottom: 5px solid #7c97a0;
     text-shadow: 0 0 12px #ffd; }
-  .container .container-intro {
+  .namecard-container .intro {
     position: absolute;
     top: 250px;
     width: 600px;
@@ -55,18 +55,18 @@
     padding-top: 12px;
     text-align: left;
     text-align-last: left; }
-  .container .container-quote:after {
+  .namecard-container .quote:after {
     display: inline-block;
     content: '';
     overflow: hidden;
     width: 100%;
     height: 0; }
 
-.container:hover {
+.namecard-container:hover {
   box-shadow: 0 0 25px 0px #8fb7a3;
   border: 2px solid #ccc; }
 
-.container-educationBackground- {
+.educationBackground-container {
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
@@ -77,17 +77,17 @@
   background: -o-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(99, 109, 148, 0.8));
   text-align: center;
   z-index: 2; }
-  .container-educationBackground- .educationBackground-title {
+  .educationBackground-container .educationBackground-title {
     font-size: 1.2em;
     padding-top: 15px;
     padding-bottom: 15px;
     font-weight: 400; }
 
-.container-educationBackground-:hover {
+.educationBackground-container:hover {
   text-shadow: 0 0 2px #ffd;
   box-shadow: 0 0 15px #8fb7a3; }
 
-.container-educationBackground-:active {
+.educationBackground-container:active {
   background: -moz-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8));
   background: -webkit-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8));
   background: -o-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8)); }
@@ -140,7 +140,7 @@
   margin-right: 25px;
   margin-top: 12px; }
 
-.container-projects- {
+.projects-container {
   position: absolute;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
@@ -152,18 +152,18 @@
   background: -o-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(99, 109, 148, 0.8));
   text-align: center;
   z-index: 2; }
-  .container-projects- .projects-title {
+  .projects-container .projects-title {
     font-size: 1.2em;
     padding: 10px;
     padding-top: 15px;
     padding-bottom: 15px;
     font-weight: 400; }
 
-.container-projects-:hover {
+.projects-container:hover {
   text-shadow: 0 0 2px #ffd;
   box-shadow: 0 0 15px #8fb7a3; }
 
-.container-projects-:active {
+.projects-container:active {
   background: -moz-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8));
   background: -webkit-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8));
   background: -o-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8)); }
@@ -199,7 +199,7 @@
   font-size: 1.2em;
   padding: 5px; }
 
-.container-awards- {
+.awards-container {
   position: absolute;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
@@ -211,7 +211,7 @@
   background: -o-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(99, 109, 148, 0.8));
   text-align: center;
   z-index: 2; }
-  .container-awards- .awards-title {
+  .awards-container .awards-title {
     font-size: 1.2em;
     padding: 10px;
     padding-top: 15px;
@@ -250,16 +250,16 @@
   padding-top: 5px;
   padding-bottom: 5px; }
 
-.container-awards-:hover {
+.awards-container:hover {
   text-shadow: 0 0 2px #ffd;
   box-shadow: 0 0 15px #8fb7a3; }
 
-.container-awards-:active {
+.awards-container:active {
   background: -moz-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8));
   background: -webkit-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8));
   background: -o-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8)); }
 
-.container-workExperience- {
+.workExperience-container {
   position: absolute;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
@@ -271,7 +271,7 @@
   background: -o-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(99, 109, 148, 0.8));
   text-align: center;
   z-index: 2; }
-  .container-workExperience- .workExperience-title {
+  .workExperience-container .workExperience-title {
     font-size: 1.2em;
     padding: 10px;
     padding-top: 15px;
@@ -309,16 +309,16 @@
   width: 150px;
   font-size: 1.2em; }
 
-.container-workExperience-:hover {
+.workExperience-container:hover {
   text-shadow: 0 0 2px #ffd;
   box-shadow: 0 0 15px #8fb7a3; }
 
-.container-workExperience-:active {
+.workExperience-container:active {
   background: -moz-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8));
   background: -webkit-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8));
   background: -o-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8)); }
 
-.container-skills- {
+.skills-container {
   position: absolute;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
@@ -330,7 +330,7 @@
   background: -o-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(99, 109, 148, 0.8));
   text-align: center;
   z-index: 2; }
-  .container-skills- .skills-title {
+  .skills-container .skills-title {
     font-size: 1.2em;
     padding: 10px;
     padding-top: 15px;
@@ -360,11 +360,11 @@
 .skills-intro {
   clear: both; }
 
-.container-skills-:hover {
+.skills-container:hover {
   text-shadow: 0 0 2px #ffd;
   box-shadow: 0 0 15px #8fb7a3; }
 
-.container-skills-:active {
+.skills-container:active {
   background: -moz-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8));
   background: -webkit-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8));
   background: -o-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8)); }

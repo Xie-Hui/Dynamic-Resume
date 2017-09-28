@@ -38,7 +38,7 @@ var cv = {
             //"link":"",
             "brief":"A Issuu crawler to find most liked portfolios",
             "intro":"using urllib+re to realize Issuu.com crawler，find and sort best portfolios and download them",
-            "skill":["Python"],
+            "skill":"Python",
             "github":"https://github.com/maajor/IssuuPortfolioCrawler",
             "zhihu":"https://www.zhihu.com/question/38438713/answer/85073618?from=profile_answer_card"
         },
@@ -48,7 +48,7 @@ var cv = {
             //"link":"",
             "brief":"Various-property FDM spatial printing with robotic arm",
             "intro":"Mix and extrude multiple materials, freeform spatial printing using robot",
-            "skill":["Arduino", "Kuka Robot"],
+            "skill":"Arduino, Kuka Robot",
             "behance":"https://www.behance.net/gallery/33713362/VP3DP-Robot",
         },
 
@@ -57,7 +57,7 @@ var cv = {
            // "link":"",
             "brief":"Biomimic formfinding inspired by slime mold",
             "intro":"Research slime mold's foraging behavior, using agent-based modelling technique to simulate and develop into archtecture form.",
-            "skill":["C#", "Grasshopper", "Photoshop", "Rhino"],
+            "skill":"C#, Grasshopper, Photoshop, Rhino",
             "github":"https://github.com/maajor/Physarealm",
             "behance":"https://www.behance.net/gallery/33713844/Physarealm",
             "food4rhino":"http://www.food4rhino.com/project/physarealm?ufh"
@@ -68,7 +68,7 @@ var cv = {
            // "link":"",
             "brief":"A Magic Tower-like RPG game to rescue software engineering's world",
             "intro":"Best project of 2014 Software Engineering Course. I am responsible for UI/UX design.",
-            "skill":["Photoshop" , "Qt", "C++"],
+            "skill":"Photoshop, Qt, C++",
             "github":"https://github.com/a-serious/elders-ambition",
             "se2014":"http://soft.cs.tsinghua.edu.cn/blog/?q=se2014"
         },
@@ -222,67 +222,82 @@ var cv = {
 
 }
 
-function createHorizontalLayout(
-    currentIndex,
-    width = 180,
-    x = 900,
-    y = -220,
-    z = 6000
-){
-    return ({
-        "x": x - width * currentIndex,
-        "y": y,
-        "z": z
-    })
-}
+var objects = []
+    parents = []
+    targets = []
+    levels = []
 
-function createCSSobj(node, position){
-    var object = new THREE.CSS3DObject( node );
-    object.position = {
-        x : 0,
-        y : 0,
-        z : 6000
-    }
-    scene.add( object );
-}
 
 function createDOM(
-    parentNode = document.getElementById("container"),  //default
+
+    parentNode = container,  //default
     JsonData = cv,  //default
-    treeDepth = 0   //default
+    treeDepth = 0,   //default
+
 ){
-    //
+
+    // create a new container for parentNode
+    var newContainer = document.createElement("div")
+
+    newContainer.className =  parentNode.className + "-container"
+
     for (key in JsonData){
+
         //console.log(key);
+
         var newNode = document.createElement("div")
+        newNode.className = key
+
         if (JsonData[key] instanceof Object){
 
-            newNode.className = parentNode.className  + "-" + key + "-"
-            newNode.textContent = key
-            //create CSS obj
-            if (treeDepth == 0) {
-                console.log(": " + key)
-                var position = createHorizontalLayout(Object.keys(JsonData).indexOf(key))
-                createCSSobj(newNode, position)
-                console.log(newNode);
-                //console.log(Object.keys(JsonData).indexOf(key));
-                console.log(position);
-            }
-            //newNode.textContent = key
-            //console.log(JsonData.keys().indexOf(key));
             createDOM(newNode, JsonData[key], treeDepth + 1)
-            parentNode.appendChild(newNode)
+
         }
         else {
-            newNode.className = parentNode.className  + "-" + key
+
             newNode.textContent = JsonData[key]
-            parentNode.appendChild(newNode)
-            //newNode.textContent = JsonData[key]
+
         }
-        parentNode.appendChild(newNode)
+
+        newContainer.appendChild(newNode)
+
     }
+
+    parentNode.appendChild(newContainer) //draw a container on the canvas
+
 }
 
+
+function createCSSobjs(cssObject) {
+
+    var object = new THREE.CSS3DObject(cssObject);
+    scene.add(object)
+    object.position.x = Math.random() * 50 - 200;
+	object.position.y = Math.random() * 50 - 200;
+	object.position.z = Math.random() * 50 - 200;
+
+    //document the container elements
+    objects.push(object)
+    //console.log(parentNode);
+    //console.log(objects);
+
+}
+
+
+
 function createCvElements() {
+
+    var container = document.getElementById("container")
     createDOM()
+    createCSSobjs(container.children[0])
+    console.log(container.children[0]);
+
+    for ( var i = 0; i < objects.length; i++ ) {
+
+        //console.log(levels[i]); //depth of the element in the tree
+        //console.log(nodeIndex[i]);
+        //console.log( objects[i].element.parent.childElementCount ); //index of the element in the tree
+        //console.log("---");
+
+    }
 }
