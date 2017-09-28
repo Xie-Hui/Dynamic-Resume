@@ -16,7 +16,7 @@
   box-shadow: 0 0 25px #618c8e;
   background: rgba(30, 69, 76, 0.8);
   transition: all 0.2s ease; }
-  .namecard-container .logo {
+  .namecard-container .namecard-logo {
     height: 200px;
     width: 200px;
     position: absolute;
@@ -26,9 +26,9 @@
     background-size: 200px 200px;
     background-repeat: no-repeat;
     transition: all 0.5s ease; }
-  .namecard-container .logo:hover {
+  .namecard-container .namecard-logo:hover {
     background-image: url(../img/pb-temp.svg); }
-  .namecard-container .name {
+  .namecard-container .namecard-name {
     position: absolute;
     left: 225px;
     top: 25px;
@@ -36,7 +36,7 @@
     font-weight: 200;
     font-size: 2.5em;
     text-shadow: 0 0 12px #ffd; }
-  .namecard-container .title {
+  .namecard-container .namecard-title {
     position: absolute;
     left: 225px;
     top: 125px;
@@ -47,7 +47,7 @@
     font-size: 1.2em;
     border-bottom: 5px solid #7c97a0;
     text-shadow: 0 0 12px #ffd; }
-  .namecard-container .intro {
+  .namecard-container .namecard-intro {
     position: absolute;
     top: 250px;
     width: 600px;
@@ -55,7 +55,7 @@
     padding-top: 12px;
     text-align: left;
     text-align-last: left; }
-  .namecard-container .quote:after {
+  .namecard-container .namecard-quote:after {
     display: inline-block;
     content: '';
     overflow: hidden;

@@ -8,6 +8,7 @@ var vanishPt;
 var sceneWebgl, rendererWebgl;
 
 window.onload = function(){
+    //createCvElements()
     init();
     animate();
 }
@@ -15,11 +16,10 @@ window.onload = function(){
 function init(){
 
     camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 );
-	camera.position.z = 1500;
+	camera.position.z = 3000;
 	scene = new THREE.Scene();
 
     createCvElements()
-    //createCSSobjs()
 
     renderer = new THREE.CSS3DRenderer();
 	renderer.setSize( window.innerWidth, window.innerHeight );

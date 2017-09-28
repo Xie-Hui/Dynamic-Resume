@@ -230,7 +230,8 @@ var objects = []
 
 function createDOM(
 
-    parentNode = container,  //default
+    parentNode,
+    position,
     JsonData = cv,  //default
     treeDepth = 0,   //default
 
@@ -238,19 +239,22 @@ function createDOM(
 
     // create a new container for parentNode
     var newContainer = document.createElement("div")
+    newContainer.className = parentNode.className
 
-    newContainer.className =  parentNode.className + "-container"
+
+    //console.log(newContainer.className)
 
     for (key in JsonData){
 
         //console.log(key);
-
         var newNode = document.createElement("div")
-        newNode.className = key
+        newNode.className = parentNode.className + "-" + key
 
         if (JsonData[key] instanceof Object){
 
-            createDOM(newNode, JsonData[key], treeDepth + 1)
+            //if this is an entry, then create a new container to wrap its items
+            newNode.textContent = key
+            createDOM(newNode, position, JsonData[key], treeDepth + 1)
 
         }
         else {
@@ -265,17 +269,48 @@ function createDOM(
 
     parentNode.appendChild(newContainer) //draw a container on the canvas
 
+    if ( treeDepth == 0 ) {
+
+        createCSSobj( newContainer, position )
+
+    }
+
+    if ( treeDepth == 1 ) {
+
+        position.x += Math.random() * 3000 - 1500
+        position.y += Math.random() * 3000 - 1500
+        position.z = -100
+        createCSSobj( newContainer, position )
+
+    }
+
+    if ( treeDepth == 2 ) {
+
+        position.x += Math.random() * 300 - 150
+        position.y += Math.random() * 300 - 150
+        position.z = -100
+        createCSSobj( newContainer, position )
+
+    }
+
 }
 
 
-function createCSSobjs(cssObject) {
+function createCSSobj(
 
-    var object = new THREE.CSS3DObject(cssObject);
+    node,
+    position
+
+) {
+
+    var object = new THREE.CSS3DObject(node);
+    //console.log(position);
+    object.position.x = position.x
+    object.position.y = position.y
+    object.position.z = position.z
+    //console.log(object);
     scene.add(object)
-    object.position.x = Math.random() * 50 - 200;
-	object.position.y = Math.random() * 50 - 200;
-	object.position.z = Math.random() * 50 - 200;
-
+    //console.log(object.position);
     //document the container elements
     objects.push(object)
     //console.log(parentNode);
@@ -287,13 +322,54 @@ function createCSSobjs(cssObject) {
 
 function createCvElements() {
 
-    var container = document.getElementById("container")
-    createDOM()
-    createCSSobjs(container.children[0])
-    console.log(container.children[0]);
+    //init parentNode
+    var parentNode = document.createElement("div")
+    parentNode.className =  "cv"
+    var position = new THREE.Vector3(0, 0, 0)
+    position.x = 0
+    position.y = 0
+    position.z = -100
+    createDOM(parentNode, position)
 
-    for ( var i = 0; i < objects.length; i++ ) {
 
+    //createCSSobjs(parentNode.children[0], position)
+    console.log(parentNode.children[0])
+    var nameCard = parentNode.children[0]
+
+    var j = 0
+
+    for ( var i = 0; i < nameCard.childNodes.length; i++ ) {
+
+        //console.log(nameCard.childNodes[ i ].childElementCount)
+
+        if ( nameCard.childNodes[ i ].childElementCount ) {
+
+            j++
+            position.x = Math.random() * 3000 - 1500
+            position.y = Math.random() * 3000 - 1500
+            position.z = -500
+            console.log(nameCard.childNodes[ i ].children[0]);
+            //createCSSobjs(nameCard.childNodes[ k ].children[0], position)
+            var section = nameCard.childNodes[ i ].children[0]
+            var sub_position = position
+            console.log("-------");
+
+            for ( var k = 0; k < section.childNodes.length; k++ ) {
+
+                if ( section.childNodes[ k ].childElementCount ) {
+
+                    sub_position.x = position.x + Math.random() * 500 - 250
+                    sub_position.y = position.y + Math.random() * 500 - 250
+                    sub_position.z = position.z
+                    console.log( "---", section.childNodes[ k ].children[0] );
+                    //createCSSobjs(section.childNodes[ k ].children[0], position)
+
+                }
+
+            }
+            //console.log(position);
+
+        }
         //console.log(levels[i]); //depth of the element in the tree
         //console.log(nodeIndex[i]);
         //console.log( objects[i].element.parent.childElementCount ); //index of the element in the tree
