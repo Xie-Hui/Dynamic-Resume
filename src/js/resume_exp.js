@@ -248,17 +248,18 @@ function createDOM(
 
         //console.log(key);
         var newNode = document.createElement("div")
-        newNode.className = parentNode.className + "-" + key
+
 
         if (JsonData[key] instanceof Object){
-
+            newNode.className = parentNode.className + "-" + key
             //if this is an entry, then create a new container to wrap its items
-            newNode.textContent = key
+            //newNode.textContent = key
             createDOM(newNode, position, JsonData[key], treeDepth + 1)
 
         }
         else {
 
+            newNode.className = key
             newNode.textContent = JsonData[key]
 
         }
@@ -277,8 +278,8 @@ function createDOM(
 
     if ( treeDepth == 1 ) {
 
-        position.x += Math.random() * 3000 - 1500
-        position.y += Math.random() * 3000 - 1500
+        position.x += Math.random() * 1000 - 500
+        position.y += Math.random() * 1000 - 500
         position.z = -100
         createCSSobj( newContainer, position )
 

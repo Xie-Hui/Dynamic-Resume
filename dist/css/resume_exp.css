@@ -4,7 +4,7 @@
 /*Mozilla*/
 /*new gradient for Webkit*/
 /*Opera11*/
-.namecard-container {
+.cv-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -16,7 +16,7 @@
   box-shadow: 0 0 25px #618c8e;
   background: rgba(30, 69, 76, 0.8);
   transition: all 0.2s ease; }
-  .namecard-container .namecard-logo {
+  .cv-container .cv-logo {
     height: 200px;
     width: 200px;
     position: absolute;
@@ -26,9 +26,9 @@
     background-size: 200px 200px;
     background-repeat: no-repeat;
     transition: all 0.5s ease; }
-  .namecard-container .namecard-logo:hover {
+  .cv-container .cv-logo:hover {
     background-image: url(../img/pb-temp.svg); }
-  .namecard-container .namecard-name {
+  .cv-container .cv-name {
     position: absolute;
     left: 225px;
     top: 25px;
@@ -36,7 +36,7 @@
     font-weight: 200;
     font-size: 2.5em;
     text-shadow: 0 0 12px #ffd; }
-  .namecard-container .namecard-title {
+  .cv-container .cv-title {
     position: absolute;
     left: 225px;
     top: 125px;
@@ -47,7 +47,7 @@
     font-size: 1.2em;
     border-bottom: 5px solid #7c97a0;
     text-shadow: 0 0 12px #ffd; }
-  .namecard-container .namecard-intro {
+  .cv-container .cv-intro {
     position: absolute;
     top: 250px;
     width: 600px;
@@ -55,18 +55,18 @@
     padding-top: 12px;
     text-align: left;
     text-align-last: left; }
-  .namecard-container .namecard-quote:after {
+  .cv-container .cv-quote:after {
     display: inline-block;
     content: '';
     overflow: hidden;
     width: 100%;
     height: 0; }
 
-.namecard-container:hover {
+.cv-container:hover {
   box-shadow: 0 0 25px 0px #8fb7a3;
   border: 2px solid #ccc; }
 
-.educationBackground-container {
+.cv-educationBackground-graduate {
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
@@ -77,22 +77,22 @@
   background: -o-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(99, 109, 148, 0.8));
   text-align: center;
   z-index: 2; }
-  .educationBackground-container .educationBackground-title {
+  .cv-educationBackground-graduate .title {
     font-size: 1.2em;
     padding-top: 15px;
     padding-bottom: 15px;
     font-weight: 400; }
 
-.educationBackground-container:hover {
+.cv-educationBackground-container:hover {
   text-shadow: 0 0 2px #ffd;
   box-shadow: 0 0 15px #8fb7a3; }
 
-.educationBackground-container:active {
+.cv-educationBackground-container:active {
   background: -moz-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8));
   background: -webkit-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8));
   background: -o-linear-gradient(top, rgba(30, 69, 76, 0.8), rgba(150, 171, 255, 0.8)); }
 
-.educationBackground-item-container {
+.cv-educationBackground {
   position: absolute;
   left: 0;
   top: 0;
@@ -102,38 +102,39 @@
   box-shadow: 0 0 10px #618c8e;
   background: rgba(30, 69, 76, 0.8); }
 
-.educationBackground-item-container:hover {
+
+.cv-educationBackground-item-container:hover {
   box-shadow: 0 0 15px 0px #8fb7a3;
   border: 2px solid #ccc; }
 
-.educationBackground-item-container:hover {
+.cv-educationBackground-item-container:hover {
   box-shadow: 0 0 25px #8fb7a3; }
 
-.educationBackground-time {
+.time {
   display: inline;
   width: 125px;
   font-size: 1.3em;
   font-weight: 100; }
 
-.educationBackground-school {
+.school {
   font-weight: 500;
   font-size: 1.5em;
   float: right;
   width: 375px;
   text-shadow: 0 0 5px #cca; }
 
-.educationBackground-degree {
+.degree {
   font-size: 1.3em;
   float: right;
   width: 375px;
   padding-top: 10px;
   padding-bottom: 5px; }
 
-.educationBackground-gpa {
+.gpa {
   clear: both;
   padding-left: 225px; }
 
-.educationBackground-courses {
+.courses {
   clear: both;
   font-size: 1.2em;
   margin-left: 25px;

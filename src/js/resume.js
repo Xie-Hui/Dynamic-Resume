@@ -224,10 +224,8 @@ var cv = {
 
 var nodePositions = {};
 var auxBoxes = {};
-//var oriTarget = new THREE.Vector3(0,0,6000);
-//var oriFrom = new THREE.Vector3(0,0,7500);
-var oriTarget = new THREE.Vector3(0,0,8000);
-var oriFrom = new THREE.Vector3(0,0,10000);
+var oriTarget = new THREE.Vector3(0,0,6000);
+var oriFrom = new THREE.Vector3(0,0,7500);
 var icons = {
     "github":"fa fa-github",
     "zhihu":"fa fa-comment",
@@ -256,8 +254,7 @@ function createCvElements(){
 
     var namecardNode = document.createElement("div");
     namecardNode.className = "namecard"+"-container";
-    //console.log(namecardNode.className);
-    container.appendChild(namecardNode);
+    //container.appendChild(namecardNode);
 
     var cvKeys = Object.keys(cv);
     //console.log(cvKeys.length);
@@ -267,19 +264,17 @@ function createCvElements(){
         var cvitem_name = cvKeys[i];
         var SectionObject = cv[cvitem_name];
         if(SectionObject instanceof Object){ //if sectionObject is a valid object e.g. has multiple entries contents
-            //console.log(SectionObject);
+            console.log(SectionObject);
             var thisKeys = Object.keys(SectionObject);//name, prohect1, project2.....
 
             //create element for this section, ie projects, educationBackground etc.
             var thisSectionNode = document.createElement("div");
             thisSectionNode.className = cvitem_name +"-container";
-            //console.log(thisSectionNode.className);
             //thisSectionNode.className = "cvsection-name-container";
             container.appendChild(thisSectionNode);
 
             var thisSectionNavNode = document.createElement("div");
             thisSectionNavNode.className = cvitem_name + "-container";
-            //console.log(thisSectionNavNode.className);
             //console.log(SectionObject);
             var temp_name = thisKeys[0];
             var tempNode = document.createElement("div");
@@ -305,13 +300,11 @@ function createCvElements(){
             var navY =  -220;
             var navZ = 6000;
 
-            
             var object = new THREE.CSS3DObject( thisSectionNavNode );
             object.position.x = navX;
             object.position.y = navY;
             object.position.z = navZ;
             scene.add( object );
-
 
             //section-block
             var sectionr = 3000 + Math.random() * 1000;
@@ -322,8 +315,8 @@ function createCvElements(){
             var thisSectionZ = Math.random() * 1000 + 2000;
             var newPosition = new THREE.Vector3(thisSectionX,thisSectionY,thisSectionZ)
 
-            var faceX = thisSectionX;
-            var faceY = thisSectionY;
+            var faceX = thisSectionX +  Math.random() * 1000 - 500;
+            var faceY = thisSectionY +  Math.random() * 1000 - 500;
             var faceZ = thisSectionZ + 1500 ;
             var faceTarget= new THREE.Vector3(faceX, faceY,faceZ);
 
@@ -356,7 +349,6 @@ function createCvElements(){
                 var targetObject = nodePositions[this.className+"target"];
                 var targetVector = nodePositions[this.className+"vector"];
                 var targetName = nodePositions[this.className+"name"];
-                console.log(targetName);
                 //transform(targetObject.position,targetVector, 1500);
                 flyTo(targetObject.position,targetVector, targetName, 1000);
             }, false);
@@ -366,7 +358,6 @@ function createCvElements(){
                 //transform(oriTarget,oriFrom, 1500);
                 flyAway(oriTarget,oriFrom, targetName, 1000);
             }, false);
-
 
              //console.log(SectionObject);
 
@@ -382,7 +373,6 @@ function createCvElements(){
 
                     var thisSectionItemNode = document.createElement("div");
                     thisSectionItemNode.className = cvitem_name +"-item-container";
-                    //console.log(thisSectionItemNode.className);
                     container.appendChild(thisSectionItemNode);
                     //console.log(SectionItemObject);
                     //console.log(sectionItemNames);
@@ -443,7 +433,6 @@ function createCvElements(){
                     cv_objects[cvitem_name+"Desired"].push(objItemDesire);
                     //console.log(cv_objects);
 
-
                 }
 
                 //title for cv-section
@@ -453,9 +442,6 @@ function createCvElements(){
                     thisNode.textContent = "Return";
                     //thisNode.textContent = SectionObject[cvsection_name];
                     thisSectionNode.appendChild(thisNode);
-                    //console.log(thisKeys[j]);
-                    //console.log(thisNode);
-                    //console.log(thisNode.className);
                 }
 
             }
@@ -466,7 +452,6 @@ function createCvElements(){
         else{
             var thisNode = document.createElement("div");
             thisNode.className = "namecard-"+cvitem_name;
-            //console.log(thisNode.className);
 
             thisNode.textContent = cv[cvitem_name];
             namecardNode.appendChild(thisNode);
@@ -474,11 +459,14 @@ function createCvElements(){
     }
 
     var object = new THREE.CSS3DObject( namecardNode );
-    console.log(namecardNode);
     object.position.x = 0;
     object.position.y = 0;
     object.position.z = 6000;
     scene.add( object );
 
+    var object = new THREE.Object3D();
+    object.position.x = 0;
+    object.position.y = 0;
+    object.position.z = 6000;
 
 }
